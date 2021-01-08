@@ -1,20 +1,30 @@
-function selectionSort(arr) {
+import asyncSetTimeout from "../helpers/asyncSetTimeout";
 
-    var len = arr.length;
+const selectionSort = async ({array,setArray, setColorsArray} = {}) => {
+    array = array.concat();
 
-    for (var i=0; i<len; i++ ){
-        var minIndex = i;
+    let len = array.length;
+    for (let i=0; i<len; i++){
+        let minIndex = i;
 
-        for (var j = i+1; j < len; j++){
-            if(arr[i] > arr[j]){
+        for (let j = i+1; j < len; j++){
+            const newColorsArray = new Array(len).fill(0);
+            newColorsArray[minIndex] = 1;
+            newColorsArray[j] = 2;
+            setColorsArray(newColorsArray);
+            await asyncSetTimeout({timeout: 2}); 
+            if(array[minIndex] > array[j]){
                 minIndex=j;
             }
         }
-        if (minIndex > i){
-            var temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
-        }
+
+        let temp = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = temp;
+        array = array.concat();
+        setArray(array);
+        console.log(i);
     }
-    return arr;
 }
+
+export default selectionSort;
