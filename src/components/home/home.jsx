@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import selectionSort from '../../algorithms/selection-sort';
 import generateRandomizedArray from '../../helpers/randomizeArray';
@@ -8,9 +9,16 @@ const Home = () => {
     const [randomizedArray, setRandomizedArray] = useState(generateRandomizedArray({arraySize: arraySize}));
     const [colorsArray, setColorsArray] = useState(new Array(arraySize).fill(0));
     const maxItem = Math.max(...randomizedArray);
-
+    const [currentAlgorithm, setCurrentAlgorithm] = useState('Bubble Sort');
+    const algorithms = ['Bubble Sort', 'Insertion Sort']
+    
     return(
     <div>
+        <HomeHeader
+            algorithms={algorithms}
+            onAlgorithmChange={setCurrentAlgorithm}
+            currentAlgorithm={currentAlgorithm}
+        />
         <div style={{backgroundColor:'#0D1929',display: 'flex', height:'calc(100vh - 20px)',
          width:'100vw', flexDirection:'row',alignItems: 'end', padding:'20px 0px 0px 0px'}}>
          {randomizedArray.map((item, index) => {
