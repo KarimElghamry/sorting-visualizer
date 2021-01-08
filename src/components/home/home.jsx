@@ -13,12 +13,20 @@ const Home = () => {
     const [currentAlgorithm, setCurrentAlgorithm] = useState('Bubble Sort');
     const algorithms = ['Bubble Sort', 'Insertion Sort']
 
+
+    const onRandomize = () => setRandomizedArray(generateRandomizedArray({arraySize: arraySize}));
+    const onInputSizeChanged = (val) => {
+        console.log(val);
+        setRandomizedArray(generateRandomizedArray({arraySize: val}));
+    }
     return (
         <div>
             <HomeHeader
                 algorithms={algorithms}
                 onAlgorithmChange={setCurrentAlgorithm}
                 currentAlgorithm={currentAlgorithm}
+                onRandomize={onRandomize}
+                onInputSizeChanged={onInputSizeChanged}
             />
             <div style={{
                 backgroundColor: '#0D1929', display: 'flex', height: 'calc(100vh - 100px)',
