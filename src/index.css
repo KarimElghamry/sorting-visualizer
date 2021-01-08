@@ -1,6 +1,7 @@
 @import '~antd/dist/antd.css';
 
-body {
+body,
+html {
   margin: 0;
   height: 100vh;
   width: 100vw;
