@@ -8,7 +8,9 @@ export function InputSizeSlider({ onInputSizeChanged }) {
                 Array Size
                     </div>
             <Slider
-                defaultValue={30}
+                defaultValue={100}
+                min={30}
+                max={500}
                 style={{ width: 200 }}
                 handleStyle={{ borderColor: '#02E095' }}
                 trackStyle={{ background: '#02E095' }}
