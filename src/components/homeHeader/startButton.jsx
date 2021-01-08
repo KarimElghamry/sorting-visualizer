@@ -8,8 +8,8 @@ export function StartButton({ onClick }) {
             type="primary"
             style={{
                 width: 160,
-                background: '#02E095',
-                borderColor: '#02E095'
+                background: '#0D1929',
+                borderColor: '#0D1929'
             }}
             icon={<PlayCircleOutlined />}
             onClick={onClick}

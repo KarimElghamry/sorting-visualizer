@@ -23,7 +23,7 @@ export function AlgorithmDropDown({ currentAlgorithm, algorithms, onAlgorithmCha
                 width: 150,
                 paddingTop: 8,
                 paddingLeft: 24,
-                background: '#02E095',
+                background: '#0D1929',
                 borderRadius: 2, boxShadow:
                     '0px 0px 1px 2px #02E095',
             }}>

@@ -16,12 +16,13 @@ function HomeHeader(
         onInputSizeChanged,
         onRandomize,
         onStart,
+        isVisualizing,
     }) {
 
     return (
         <PageHeader
             style={{
-                background: '#0D1929',
+                background: '#02E095',
                 border: '1px solid rgb(0, 0, 0)',
                 borderColor: 'black',
                 color: 'white',
@@ -40,8 +41,8 @@ function HomeHeader(
                     algorithms={algorithms}
                     onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
                 />
-                <SpeedSlider onSpeedChange={onSpeedChange} />
-                <InputSizeSlider onInputSizeChanged={onInputSizeChanged} />
+                <SpeedSlider onSpeedChange={onSpeedChange} isVisualizing={isVisualizing} />
+                <InputSizeSlider onInputSizeChanged={onInputSizeChanged} isVisualizing={isVisualizing} />
                 <RandomizeButton onClick={onRandomize} />
                 <StartButton onClick={onStart} />
             </div>
