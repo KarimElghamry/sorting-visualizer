@@ -4,6 +4,7 @@ import generateRandomizedArray from '../../helpers/randomizeArray';
 import SortingBar from '../sorting_bar/SortingBar';
 import HomeHeader from '../homeHeader/homeHeader';
 import '../../index.css';
+import bubbleSort from '../../algorithms/bubble-sort';
 
 const Home = () => {
     const arraySize = 100;
@@ -35,12 +36,21 @@ const Home = () => {
         setIsVisualizing(true);
         switch (currentAlgorithm) {
             case 'Selection Sort':
-                await selectionSort({array: randomizedArray, 
+                await selectionSort({
+                    array: randomizedArray, 
                     setArray: setRandomizedArray, 
                     visualizationSpeed: visualizationSpeed,
                     setColorsArray: setColorsArray});
                 break;
-        
+
+            case 'Bubble Sort':
+                await bubbleSort({
+                    array: randomizedArray, 
+                    setArray: setRandomizedArray, 
+                    visualizationSpeed: visualizationSpeed,
+                    setColorsArray: setColorsArray});
+                break;
+
             default:
                 break;
         }
