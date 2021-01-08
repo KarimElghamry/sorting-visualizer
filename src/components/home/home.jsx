@@ -6,19 +6,45 @@ import HomeHeader from '../homeHeader/homeHeader';
 import '../../index.css';
 
 const Home = () => {
-    const arraySize = 150;
+    const arraySize = 100;
+    const [isVisualizing, setIsVisualizing] = useState(false);
     const [randomizedArray, setRandomizedArray] = useState(generateRandomizedArray({ arraySize: arraySize }));
-    const [colorsArray, setColorsArray] = useState(new Array(arraySize).fill(0));
+    const [colorsArray, setColorsArray] = useState(new Array(randomizedArray.length).fill(0));
+    const [visualizationSpeed, setVisualizationSpeed] = useState(30);
     const maxItem = Math.max(...randomizedArray);
     const [currentAlgorithm, setCurrentAlgorithm] = useState('Bubble Sort');
-    const algorithms = ['Bubble Sort', 'Insertion Sort']
+    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort'];
 
 
-    const onRandomize = () => setRandomizedArray(generateRandomizedArray({arraySize: arraySize}));
+    const onRandomize = () => {
+        if(isVisualizing) return;
+        setRandomizedArray(generateRandomizedArray({arraySize: arraySize}))
+    };
     const onInputSizeChanged = (val) => {
-        console.log(val);
+        if(isVisualizing) return;
         setRandomizedArray(generateRandomizedArray({arraySize: val}));
+        setColorsArray(new Array(randomizedArray.length).fill(0));
     }
+    const onSpeedChange = (val) =>{
+        if(isVisualizing) return;
+        setVisualizationSpeed(100 - val + 2);
+    }
+    const onVisualize = async() =>{
+        if(isVisualizing) return;
+
+        setIsVisualizing(true);
+        switch (currentAlgorithm) {
+            case 'Selection Sort':
+                await selectionSort({array: randomizedArray, setArray: setRandomizedArray, setColorsArray: setColorsArray});
+                break;
+        
+            default:
+                break;
+        }
+
+        setIsVisualizing(false);
+    }
+
     return (
         <div>
             <HomeHeader
@@ -27,6 +53,9 @@ const Home = () => {
                 currentAlgorithm={currentAlgorithm}
                 onRandomize={onRandomize}
                 onInputSizeChanged={onInputSizeChanged}
+                onSpeedChange={onSpeedChange}
+                onStart={onVisualize}
+                isVisualizing={isVisualizing}
             />
             <div style={{
                 backgroundColor: '#0D1929', display: 'flex', height: 'calc(100vh - 100px)',
@@ -45,7 +74,6 @@ const Home = () => {
                     </div>
                 })}
             </div>
-            {/* <button onClick={async () => await selectionSort({array: randomizedArray, setArray: setRandomizedArray, setColorsArray: setColorsArray})}>Start</button> */}
         </div>
     );
 }
