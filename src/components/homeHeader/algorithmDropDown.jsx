@@ -3,7 +3,7 @@ import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
 
-export function AlgorithmDropDown({ algorithms, onAlgorithmChange }) {
+export function AlgorithmDropDown({ currentAlgorithm, algorithms, onAlgorithmChange }) {
 
 
     const menu = (
@@ -16,9 +16,9 @@ export function AlgorithmDropDown({ algorithms, onAlgorithmChange }) {
         </Menu>
     );
     return (
-        <Dropdown overlay={menu} trigger={['click']}>
-            <div>
-                Choose Algorithm <DownOutlined />
+        <Dropdown overlay={menu} trigger={['click']} >
+            <div style={{ marginTop: 10 }}>
+                {currentAlgorithm} <DownOutlined />
             </div>
         </Dropdown>
     );
