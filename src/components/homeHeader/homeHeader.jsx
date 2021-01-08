@@ -30,25 +30,25 @@ export function HomeHeader({ algorithms, onAlgorithmChange, currentAlgorithm }) 
                     algorithms={algorithms}
                     onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
                 />
-                <div style={{ marginLeft: 60 }}>
+                <div >
                     <div style={{ marginLeft: 40 }}>
                         Visualization Speed
                     </div>
-                    <Slider defaultValue={30} style={{ width: 200 }} />
+                    <Slider defaultValue={30} style={{ width: 200 }} handleStyle={{ borderColor: '#02E095' }} trackStyle={{ background: '#02E095' }} />
                 </div>
-                <div style={{ marginLeft: 60 }}>
-                    <div style={{ marginLeft: 60 }}>
+                <div >
+                    <div style={{ marginLeft: 70 }}>
                         Array Size
                     </div>
-                    <Slider defaultValue={100} min={30} max={500} style={{ width: 200 }} />
+                    <Slider defaultValue={100} min={30} max={500} style={{ width: 200 }} handleStyle={{ borderColor: '#02E095' }} trackStyle={{ background: '#02E095' }} />
                 </div>
-                <div style={{ marginLeft: 60 }}>
-                    <Button type="primary" icon={<RedoOutlined />}>
+                <div style={{ marginTop: 8 }}>
+                    <Button type="primary" style={{ background: '#02E095', borderColor: '#02E095' }} icon={<RedoOutlined />}>
                         Randomize
                     </Button>
                 </div>
-                <div style={{ marginLeft: 60 }}>
-                    <Button type="primary" icon={<PlayCircleOutlined />}>
+                <div style={{ marginTop: 8 }}>
+                    <Button type="primary" style={{ background: '#02E095', borderColor: '#02E095' }} icon={<PlayCircleOutlined />}>
                         Start
                     </Button>
                 </div>
