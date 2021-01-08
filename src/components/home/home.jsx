@@ -5,6 +5,7 @@ import SortingBar from '../sorting_bar/SortingBar';
 import HomeHeader from '../homeHeader/homeHeader';
 import '../../index.css';
 import bubbleSort from '../../algorithms/bubble-sort';
+import insertionSort from '../../algorithms/insertion-sort';
 
 const Home = () => {
     const arraySize = 100;
@@ -45,6 +46,14 @@ const Home = () => {
 
             case 'Bubble Sort':
                 await bubbleSort({
+                    array: randomizedArray, 
+                    setArray: setRandomizedArray, 
+                    visualizationSpeed: visualizationSpeed,
+                    setColorsArray: setColorsArray});
+                break;
+
+            case 'Insertion Sort':
+                await insertionSort({
                     array: randomizedArray, 
                     setArray: setRandomizedArray, 
                     visualizationSpeed: visualizationSpeed,
