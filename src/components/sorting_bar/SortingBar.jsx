@@ -5,7 +5,7 @@ const SortingBar = (props) =>{
 
     switch (props.colorCode) {
         case 1:
-            color = 'green';
+            color = '#02E095';
             break;
         case 2:
             color = 'red';

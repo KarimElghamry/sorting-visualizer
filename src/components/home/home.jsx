@@ -18,7 +18,7 @@ const Home = () => {
 
     const onRandomize = () => {
         if(isVisualizing) return;
-        setRandomizedArray(generateRandomizedArray({arraySize: arraySize}))
+        setRandomizedArray(generateRandomizedArray({arraySize: randomizedArray.length}))
     };
     const onInputSizeChanged = (val) => {
         if(isVisualizing) return;
@@ -35,7 +35,10 @@ const Home = () => {
         setIsVisualizing(true);
         switch (currentAlgorithm) {
             case 'Selection Sort':
-                await selectionSort({array: randomizedArray, setArray: setRandomizedArray, setColorsArray: setColorsArray});
+                await selectionSort({array: randomizedArray, 
+                    setArray: setRandomizedArray, 
+                    visualizationSpeed: visualizationSpeed,
+                    setColorsArray: setColorsArray});
                 break;
         
             default:

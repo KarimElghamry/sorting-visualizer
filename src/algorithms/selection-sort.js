@@ -1,6 +1,6 @@
 import asyncSetTimeout from "../helpers/asyncSetTimeout";
 
-const selectionSort = async ({array,setArray, setColorsArray} = {}) => {
+const selectionSort = async ({array,setArray, setColorsArray, visualizationSpeed} = {}) => {
     array = array.concat();
 
     let len = array.length;
@@ -12,7 +12,7 @@ const selectionSort = async ({array,setArray, setColorsArray} = {}) => {
             newColorsArray[minIndex] = 1;
             newColorsArray[j] = 2;
             setColorsArray(newColorsArray);
-            await asyncSetTimeout({timeout: 2}); 
+            await asyncSetTimeout({timeout: visualizationSpeed}); 
             if(array[minIndex] > array[j]){
                 minIndex=j;
             }
