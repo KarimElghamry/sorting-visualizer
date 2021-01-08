@@ -10,6 +10,9 @@ const SortingBar = (props) =>{
         case 2:
             color = 'red';
             break;
+        case 3:
+            color = 'yellow';
+            break;
         default:
             break;
     }

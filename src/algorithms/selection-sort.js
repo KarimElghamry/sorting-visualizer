@@ -9,6 +9,7 @@ const selectionSort = async ({array,setArray, setColorsArray, visualizationSpeed
 
         for (let j = i+1; j < len; j++){
             const newColorsArray = new Array(len).fill(0);
+            newColorsArray[i] = 3;
             newColorsArray[minIndex] = 1;
             newColorsArray[j] = 2;
             setColorsArray(newColorsArray);
