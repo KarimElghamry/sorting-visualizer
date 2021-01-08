@@ -6,3 +6,18 @@ html {
   height: 100vh;
   width: 100vw;
 }
+
+div {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+div::after {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+div::before {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}

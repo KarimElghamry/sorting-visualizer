@@ -3,8 +3,10 @@ import selectionSort from '../../algorithms/selection-sort';
 import generateRandomizedArray from '../../helpers/randomizeArray';
 import SortingBar from '../sorting_bar/SortingBar';
 import HomeHeader from '../homeHeader/homeHeader';
+import '../../index.css';
+
 const Home = () => {
-    const arraySize = 100;
+    const arraySize = 150;
     const [randomizedArray, setRandomizedArray] = useState(generateRandomizedArray({ arraySize: arraySize }));
     const [colorsArray, setColorsArray] = useState(new Array(arraySize).fill(0));
     const maxItem = Math.max(...randomizedArray);
@@ -19,13 +21,14 @@ const Home = () => {
                 currentAlgorithm={currentAlgorithm}
             />
             <div style={{
-                backgroundColor: '#0D1929', display: 'flex', height: 'calc(100vh - 20px)',
+                backgroundColor: '#0D1929', display: 'flex', height: 'calc(100vh - 100px)',
                 width: '100vw', flexDirection: 'row',
-                alignItems: 'end',  padding: '20px 0px 0px 0px',
+                alignItems: 'end',  padding: '0px 0px 0px 0px',
             }}>
                 {randomizedArray.map((item, index) => {
                     const height = item / maxItem * 100;
-                    return <div key={index} style={{ height: '100%', display: 'flex', alignItems: 'end' }}>
+                    return <div className='container' 
+                        key={index} style={{ height: '100%', display: 'flex', alignItems: 'end' }}>
                         <SortingBar colorCode={colorsArray[index]} style={{
                             height: `calc(${height}% - 20px)`,
                             width: `calc((100vw/${randomizedArray.length}) - 2px `, border: `1px solid #0D1929`,
