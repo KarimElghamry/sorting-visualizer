@@ -43,12 +43,12 @@ export function HomeHeader({ algorithms, onAlgorithmChange, currentAlgorithm }) 
                     <Slider defaultValue={100} min={30} max={500} style={{ width: 200 }} handleStyle={{ borderColor: '#02E095' }} trackStyle={{ background: '#02E095' }} />
                 </div>
                 <div style={{ marginTop: 8 }}>
-                    <Button type="primary" style={{ background: '#02E095', borderColor: '#02E095' }} icon={<RedoOutlined />}>
+                    <Button type="primary" style={{ width: 160, background: '#02E095', borderColor: '#02E095' }} icon={<RedoOutlined />}>
                         Randomize
                     </Button>
                 </div>
                 <div style={{ marginTop: 8 }}>
-                    <Button type="primary" style={{ background: '#02E095', borderColor: '#02E095' }} icon={<PlayCircleOutlined />}>
+                    <Button type="primary" style={{ width: 160, background: '#02E095', borderColor: '#02E095' }} icon={<PlayCircleOutlined />}>
                         Start
                     </Button>
                 </div>
