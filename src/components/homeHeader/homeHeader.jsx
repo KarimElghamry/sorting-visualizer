@@ -7,7 +7,6 @@ import { RandomizeButton } from './randomizeButton';
 import { StartButton } from './startButton';
 
 
-
 function HomeHeader(
     {
         algorithms,

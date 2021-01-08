@@ -20,14 +20,16 @@ const Home = () => {
             />
             <div style={{
                 backgroundColor: '#0D1929', display: 'flex', height: 'calc(100vh - 20px)',
-                width: '100vw', flexDirection: 'row', alignItems: 'end', padding: '20px 0px 0px 0px'
+                width: '100vw', flexDirection: 'row',
+                alignItems: 'end',  padding: '20px 0px 0px 0px',
             }}>
                 {randomizedArray.map((item, index) => {
                     const height = item / maxItem * 100;
                     return <div key={index} style={{ height: '100%', display: 'flex', alignItems: 'end' }}>
                         <SortingBar colorCode={colorsArray[index]} style={{
                             height: `calc(${height}% - 20px)`,
-                            width: `calc((100vw/${randomizedArray.length}) - 2px `, border: `1px solid #0D1929`
+                            width: `calc((100vw/${randomizedArray.length}) - 2px `, border: `1px solid #0D1929`,
+                            marginTop: 'auto',
                         }}></SortingBar>
                     </div>
                 })}
