@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import selectionSort from '../../algorithms/selection-sort';
 import generateRandomizedArray from '../../helpers/randomizeArray';

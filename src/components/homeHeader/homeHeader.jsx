@@ -8,7 +8,7 @@ import { StartButton } from './startButton';
 
 
 
-export function HomeHeader(
+function HomeHeader(
     {
         algorithms,
         onAlgorithmChange,
@@ -50,3 +50,5 @@ export function HomeHeader(
         </PageHeader>
     );
 }
+
+export default HomeHeader;
