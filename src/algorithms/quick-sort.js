@@ -1,40 +1,61 @@
-function partition(arr, leftIndex, rightIndex) {
+import asyncSetTimeout from "../helpers/asyncSetTimeout";
 
-    let midIndex = Math.floor((leftIndex + rightIndex)/2);
-    let pivot = arr[midIndex]
+let arr = [];
 
-    while (leftIndex <= rightIndex){
+const partition = async (leftIndex, rightIndex, setArray, setColorsArray, visualizationSpeed)  => {
+    let i = (leftIndex-1);        
+    let pivot = arr[rightIndex];   
+    let newColorsArray = new Array(arr.length).fill(0);
+    newColorsArray[rightIndex] = 3;
+    setColorsArray(newColorsArray);
+    await asyncSetTimeout({timeout: visualizationSpeed}); 
+  
+    for(let j = leftIndex; j < rightIndex; j++){
+        newColorsArray = new Array(arr.length).fill(0);
+        newColorsArray[i] = 2;
+        newColorsArray[j] = 2;
+        newColorsArray[rightIndex] = 3;
+        setColorsArray(newColorsArray.concat());
+        await asyncSetTimeout({timeout: visualizationSpeed}); 
+        if (arr[j] <= pivot)
+        {            
+            i = i+1;
 
-        while (arr[rightIndex] > pivot){
-            rightIndex--;
+            newColorsArray = new Array(arr.length).fill(0);
+            newColorsArray[i] = 1;
+            newColorsArray[j] = 2;
+            newColorsArray[rightIndex] = 3;
+            setColorsArray(newColorsArray.concat());
+            await asyncSetTimeout({timeout: visualizationSpeed * 1.5}); 
+
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            setArray(arr.concat());
         }
 
-        while (arr[leftIndex] < pivot){
-            leftIndex++;
-        }
+    } 
 
-        if (leftIndex <= rightIndex){
-            var temp = arr[leftIndex];
-            arr[leftIndex]= arr[rightIndex];
-            arr[rightIndex]= temp;
-            leftIndex++;
-            rightIndex--;
-        }
-    }
-   return leftIndex; 
+    let temp = arr[i+1];
+    arr[i+1] = arr[rightIndex];
+    arr[rightIndex] = temp;
+    setArray(arr.concat());
+    setColorsArray(new Array(arr.length).fill(0));
+    await asyncSetTimeout({timeout: visualizationSpeed}); 
+    return i+1;
 }
 
-function quickSort(arr, leftIndex, rightIndex) {
-    let len = arr.lenght;
-    if(len>1){
-        let index= partition(arr, leftIndex, rightIndex);
-        if(leftIndex < index-1){
-            quickSort(arr, leftIndex, index-1);
-        }
-        if(rightIndex > index){
-            quickSort(arr, index, rightIndex);
-        }
-        return arr;
+const quickSort = async ({leftIndex, rightIndex, setArray, setColorsArray, visualizationSpeed} = {}) => {
+    if(leftIndex < rightIndex){
+        let index = await partition(leftIndex, rightIndex, setArray, setColorsArray, visualizationSpeed);
+        await quickSort({leftIndex: leftIndex, rightIndex: index - 1, setArray: setArray, setColorsArray: setColorsArray, visualizationSpeed: visualizationSpeed});
+        await quickSort({leftIndex: index + 1, rightIndex: rightIndex, setArray: setArray, setColorsArray: setColorsArray, visualizationSpeed: visualizationSpeed});
     }
-    
 }
+
+const quickSortWrapper = async ({array, leftIndex, rightIndex, setArray, setColorsArray, visualizationSpeed} = {}) => {
+    arr = [];
+    arr = array.concat();
+    await quickSort({leftIndex: leftIndex, rightIndex: rightIndex, setArray: setArray, setColorsArray: setColorsArray, visualizationSpeed: visualizationSpeed})
+}
+export default quickSortWrapper;
