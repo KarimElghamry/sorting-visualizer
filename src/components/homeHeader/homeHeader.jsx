@@ -1,12 +1,23 @@
 import { PageHeader } from 'antd';
 import React from 'react';
-import { Slider, Button } from 'antd';
 import { AlgorithmDropDown } from './algorithmDropDown';
-import { PlayCircleOutlined, RedoOutlined } from '@ant-design/icons';
+import { SpeedSlider } from './speedSlider';
+import { InputSizeSlider } from './inputSizeSlider';
+import { RandomizeButton } from './randomizeButton';
+import { StartButton } from './startButton';
 
 
 
-export function HomeHeader({ algorithms, onAlgorithmChange, currentAlgorithm }) {
+export function HomeHeader(
+    {
+        algorithms,
+        onAlgorithmChange,
+        currentAlgorithm,
+        onSpeedChange,
+        onInputSizeChanged,
+        onRandomize,
+        onStart,
+    }) {
 
     return (
         <PageHeader
@@ -30,28 +41,10 @@ export function HomeHeader({ algorithms, onAlgorithmChange, currentAlgorithm }) 
                     algorithms={algorithms}
                     onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
                 />
-                <div >
-                    <div style={{ marginLeft: 40 }}>
-                        Visualization Speed
-                    </div>
-                    <Slider defaultValue={30} style={{ width: 200 }} handleStyle={{ borderColor: '#02E095' }} trackStyle={{ background: '#02E095' }} />
-                </div>
-                <div >
-                    <div style={{ marginLeft: 70 }}>
-                        Array Size
-                    </div>
-                    <Slider defaultValue={100} min={30} max={500} style={{ width: 200 }} handleStyle={{ borderColor: '#02E095' }} trackStyle={{ background: '#02E095' }} />
-                </div>
-                <div style={{ marginTop: 8 }}>
-                    <Button type="primary" style={{ width: 160, background: '#02E095', borderColor: '#02E095' }} icon={<RedoOutlined />}>
-                        Randomize
-                    </Button>
-                </div>
-                <div style={{ marginTop: 8 }}>
-                    <Button type="primary" style={{ width: 160, background: '#02E095', borderColor: '#02E095' }} icon={<PlayCircleOutlined />}>
-                        Start
-                    </Button>
-                </div>
+                <SpeedSlider onSpeedChange={onSpeedChange} />
+                <InputSizeSlider onInputSizeChanged={onInputSizeChanged} />
+                <RandomizeButton onClick={onRandomize} />
+                <StartButton onClick={onStart} />
             </div>
 
         </PageHeader>
