@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeHeader } from '../menuBar/menuBar.jsx';
+import { HomeHeader } from '../homeHeader/homeHeader.jsx';
 const Home = () => {
     let currentAlgorithm = '';
     const algorithms = ['Bubble Sort', 'Insertion Sort']
