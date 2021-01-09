@@ -6,6 +6,8 @@ import HomeHeader from '../homeHeader/homeHeader';
 import '../../index.css';
 import bubbleSort from '../../algorithms/bubble-sort';
 import insertionSort from '../../algorithms/insertion-sort';
+import inplaceMergeSortWrapper from '../../algorithms/inplace-merge-sort';
+import mergeSortWrapper from '../../algorithms/merge-sort';
 import quickSortLWrapper from '../../algorithms/quick-sort-l';
 import quickSortLRWrapper from '../../algorithms/quick-sort-lr';
 
@@ -15,24 +17,27 @@ const Home = () => {
     const [randomizedArray, setRandomizedArray] = useState(generateRandomizedArray({ arraySize: arraySize }));
     const [colorsArray, setColorsArray] = useState(new Array(randomizedArray.length).fill(0));
     const [visualizationSpeed, setVisualizationSpeed] = useState(30);
-    const maxItem = Math.max(...randomizedArray);
+    const [maxItem, setMaxItem] = useState(Math.max(...randomizedArray));
     const [currentAlgorithm, setCurrentAlgorithm] = useState('Bubble Sort');
-    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort (L)', 'Quick Sort (LR)'];
+    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort','Quick Sort (L)', 'Quick Sort (LR)','Merge Sort', 'Inplace Merge Sort'];
 
 
     const onRandomize = () => {
-        if (isVisualizing) return;
-        setRandomizedArray(generateRandomizedArray({ arraySize: randomizedArray.length }))
+        if(isVisualizing) return;
+        setRandomizedArray(generateRandomizedArray({arraySize: randomizedArray.length}));
+        setMaxItem(Math.max(...randomizedArray));
     };
     const onInputSizeChanged = (val) => {
-        if (isVisualizing) return;
-        setRandomizedArray(generateRandomizedArray({ arraySize: val }));
+        if(isVisualizing) return;
+        setRandomizedArray(generateRandomizedArray({arraySize: val}));
+        setMaxItem(Math.max(...randomizedArray));
         setColorsArray(new Array(randomizedArray.length).fill(0));
     }
     const onSpeedChange = (val) => {
         if (isVisualizing) return;
         setVisualizationSpeed(100 - val + 2);
     }
+    
     const onVisualize = async () => {
         if (isVisualizing) return;
 
@@ -84,6 +89,27 @@ const Home = () => {
                     visualizationSpeed: visualizationSpeed,
                     setColorsArray: setColorsArray
                 });
+                break;
+
+
+            case 'Merge Sort':
+                await mergeSortWrapper({
+                    array: randomizedArray, 
+                    leftIndex: 0,
+                    rightIndex: randomizedArray.length - 1,
+                    setArray: setRandomizedArray, 
+                    visualizationSpeed: visualizationSpeed,
+                    setColorsArray: setColorsArray});
+                break;
+
+            case 'Inplace Merge Sort':
+                await inplaceMergeSortWrapper({
+                    array: randomizedArray, 
+                    leftIndex: 0,
+                    rightIndex: randomizedArray.length - 1,
+                    setArray: setRandomizedArray, 
+                    visualizationSpeed: visualizationSpeed,
+                    setColorsArray: setColorsArray});
                 break;
 
             default:
