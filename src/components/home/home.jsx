@@ -7,6 +7,7 @@ import '../../index.css';
 import bubbleSort from '../../algorithms/bubble-sort';
 import insertionSort from '../../algorithms/insertion-sort';
 import quickSortWrapper from '../../algorithms/quick-sort';
+import mergeSortWrapper from '../../algorithms/merge-sort';
 
 const Home = () => {
     const arraySize = 100;
@@ -16,7 +17,7 @@ const Home = () => {
     const [visualizationSpeed, setVisualizationSpeed] = useState(30);
     const maxItem = Math.max(...randomizedArray);
     const [currentAlgorithm, setCurrentAlgorithm] = useState('Bubble Sort');
-    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort'];
+    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort', 'Merge Sort'];
 
 
     const onRandomize = () => {
@@ -63,6 +64,16 @@ const Home = () => {
             
             case 'Quick Sort':
                 await quickSortWrapper({
+                    array: randomizedArray, 
+                    leftIndex: 0,
+                    rightIndex: randomizedArray.length - 1,
+                    setArray: setRandomizedArray, 
+                    visualizationSpeed: visualizationSpeed,
+                    setColorsArray: setColorsArray});
+                break;
+
+            case 'Merge Sort':
+                await mergeSortWrapper({
                     array: randomizedArray, 
                     leftIndex: 0,
                     rightIndex: randomizedArray.length - 1,
