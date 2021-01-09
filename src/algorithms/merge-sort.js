@@ -3,55 +3,74 @@ import asyncSetTimeout from "../helpers/asyncSetTimeout";
 let arr = [];
 
 const mergeSort = async (l,r,setArray, setColorsArray, visualizationSpeed) =>{
-  if (l >= r) return;
+    if(l >= r) return;
 
-  let mid = Math.floor((l+r)/2);
-  await mergeSort(l, mid,setArray, setColorsArray, visualizationSpeed);
-  await mergeSort(mid+1, r,setArray, setColorsArray, visualizationSpeed);
+    let mid = Math.floor((l+r)/2);
+    await mergeSort(l, mid,setArray, setColorsArray, visualizationSpeed);
+    await mergeSort(mid+1, r,setArray, setColorsArray, visualizationSpeed);
 
-  let i = l;
-  let j = mid + 1;
-  let newColorsArray = new Array(arr.length).fill(0);
-  newColorsArray[i] = 2;
-  newColorsArray[j] = 2;
-  setColorsArray(newColorsArray);
-  await asyncSetTimeout({timeout: visualizationSpeed});
-  
-  while(i <= mid && j <= r){
-      if(arr[i] > arr[j]){
-          let index = j;
+    let i = l;
+    let j = mid + 1;
+    let it = 0;
+    let tempArr = new Array(r - l + 1);
+    let newColorsArray = new Array(arr.length).fill(0);
 
-          while(index !== i){
-            let temp = arr[index];
-            arr[index] = arr[index-1];
-            arr[index-1] = temp;
+    
 
-            newColorsArray[j] = 2;
-            newColorsArray[index-1] = 1;
-            newColorsArray[index] = 0;
-            setColorsArray(newColorsArray.concat());
-            setArray(arr.concat());
-            await asyncSetTimeout({timeout: visualizationSpeed});
+    while(i <= mid && j <= r){
+        newColorsArray = new Array(arr.length).fill(0);
+        newColorsArray[i] = 2;
+        newColorsArray[j] = 2;
+        setColorsArray(newColorsArray.concat());
+        await asyncSetTimeout({timeout: visualizationSpeed});
 
-            index--;
-          }
+        if (arr[i] > arr[j]){
+            tempArr[it] = arr[j];
+            j++;
+        }
+        else{
+            tempArr[it] = arr[i];
+            i++;
+        }
 
-          newColorsArray[i] = 0;
-          newColorsArray[j] = 0;
-          i++;
-          mid++;
-          j++;
-      }
-      else{
-          newColorsArray[i] = 0;
-          i++;
-      }
+        it++;
+    }
 
-    newColorsArray[i] = 2;
-    newColorsArray[j] = 2;
-    setColorsArray(newColorsArray.concat());
-    await asyncSetTimeout({timeout: visualizationSpeed});
-  }
+    while(i <= mid){
+        newColorsArray = new Array(arr.length).fill(0);
+        newColorsArray[i] = 2;
+        newColorsArray[j] = 2;
+        setColorsArray(newColorsArray.concat());
+        await asyncSetTimeout({timeout: visualizationSpeed});
+
+        tempArr[it] = arr[i];
+        it++;
+        i++;
+    }
+
+    while(j <= r){
+        newColorsArray = new Array(arr.length).fill(0);
+        newColorsArray[i] = 2;
+        newColorsArray[j] = 2;
+        setColorsArray(newColorsArray.concat());
+        await asyncSetTimeout({timeout: visualizationSpeed});
+        
+        tempArr[it] = arr[j];
+        it++;
+        j++;
+    }
+
+    it = 0;
+    for(let k = l; k <= r; k++, it++){
+        arr[k] = tempArr[it];
+        newColorsArray = new Array(arr.length).fill(0);
+        newColorsArray[k] = 1;
+        newColorsArray[i - 1] = 2;
+        newColorsArray[j - 1] = 2;
+        setArray(arr.concat());
+        setColorsArray(newColorsArray.concat());
+        await asyncSetTimeout({timeout: visualizationSpeed}); 
+    }
 
 }
 

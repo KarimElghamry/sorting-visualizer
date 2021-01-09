@@ -7,6 +7,7 @@ import '../../index.css';
 import bubbleSort from '../../algorithms/bubble-sort';
 import insertionSort from '../../algorithms/insertion-sort';
 import quickSortWrapper from '../../algorithms/quick-sort';
+import inplaceMergeSortWrapper from '../../algorithms/inplace-merge-sort';
 import mergeSortWrapper from '../../algorithms/merge-sort';
 
 const Home = () => {
@@ -15,18 +16,20 @@ const Home = () => {
     const [randomizedArray, setRandomizedArray] = useState(generateRandomizedArray({ arraySize: arraySize }));
     const [colorsArray, setColorsArray] = useState(new Array(randomizedArray.length).fill(0));
     const [visualizationSpeed, setVisualizationSpeed] = useState(30);
-    const maxItem = Math.max(...randomizedArray);
+    const [maxItem, setMaxItem] = useState(Math.max(...randomizedArray));
     const [currentAlgorithm, setCurrentAlgorithm] = useState('Bubble Sort');
-    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort', 'Merge Sort'];
+    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort','Merge Sort', 'Inplace Merge Sort'];
 
 
     const onRandomize = () => {
         if(isVisualizing) return;
-        setRandomizedArray(generateRandomizedArray({arraySize: randomizedArray.length}))
+        setRandomizedArray(generateRandomizedArray({arraySize: randomizedArray.length}));
+        setMaxItem(Math.max(...randomizedArray));
     };
     const onInputSizeChanged = (val) => {
         if(isVisualizing) return;
         setRandomizedArray(generateRandomizedArray({arraySize: val}));
+        setMaxItem(Math.max(...randomizedArray));
         setColorsArray(new Array(randomizedArray.length).fill(0));
     }
     const onSpeedChange = (val) =>{
@@ -72,8 +75,19 @@ const Home = () => {
                     setColorsArray: setColorsArray});
                 break;
 
+
             case 'Merge Sort':
                 await mergeSortWrapper({
+                    array: randomizedArray, 
+                    leftIndex: 0,
+                    rightIndex: randomizedArray.length - 1,
+                    setArray: setRandomizedArray, 
+                    visualizationSpeed: visualizationSpeed,
+                    setColorsArray: setColorsArray});
+                break;
+
+            case 'Inplace Merge Sort':
+                await inplaceMergeSortWrapper({
                     array: randomizedArray, 
                     leftIndex: 0,
                     rightIndex: randomizedArray.length - 1,
