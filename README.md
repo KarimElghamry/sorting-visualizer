@@ -29,6 +29,13 @@
 :wrench: Time Sort<br><br>
 :wrench: Bogosort<br><br>
 
+## Color Codes
+![#fffffe](https://via.placeholder.com/15/fffffe/000000?text=+) Generic value in the array <br><br>
+![#fcfb06](https://via.placeholder.com/15/fcfb06/000000?text=+) Pivot/Value to be replaced <br><br>
+![#06e58d](https://via.placeholder.com/15/06e58d/000000?text=+) Value being swapped <br><br>
+![#fc0104](https://via.placeholder.com/15/fc0104/000000?text=+) Key comparison <br><br>
+
+
 ## Examples
 <img src="https://media.giphy.com/media/ctNkTIrkqDmI6qx1GW/source.gif">
 <img src="https://media.giphy.com/media/PUeeJmCKIXlNl5mH5W/source.gif">
