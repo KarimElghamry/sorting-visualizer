@@ -1,62 +1,65 @@
-import { Row } from 'antd';
+import {Row} from 'antd';
 import React from 'react';
-import { AlgorithmDropDown } from './algorithmDropDown';
-import { SpeedSlider } from './speedSlider';
-import { InputSizeSlider } from './inputSizeSlider';
-import { RandomizeButton } from './randomizeButton';
-import { StartButton } from './startButton';
 import assets from '../../assets';
+import AlgorithmDropDown from './algorithmDropDown';
+import InputSizeSlider from './inputSizeSlider';
+import RandomizeButton from './randomizeButton';
+import SpeedSlider from './speedSlider';
+import StartButton from './startButton';
 
-
-const HomeHeader = (
-    {
-        algorithms,
-        onAlgorithmChange,
-        currentAlgorithm,
-        onSpeedChange,
-        onInputSizeChanged,
-        onRandomize,
-        onStart,
-        isVisualizing,
-    }) => {
-    const openUrl = (url) => {
+const HomeHeader = ({
+  algorithms,
+  onAlgorithmChange,
+  currentAlgorithm,
+  onSpeedChange,
+  onInputSizeChanged,
+  onRandomize,
+  onStart,
+  isVisualizing,
+}) => {
+  const openUrl = (url) => {
     window.open(url, '_blank')?.focus();
   };
 
+  return (
+    <Row
+      style={{
+        background: '#02E095',
+        color: 'white',
+        padding: '10px 0px 10px 0px',
+        width: '100%',
+      }}
+      align="middle"
+      justify="space-around"
+    >
+      <img
+        alt=""
+        src={assets.images.githubLogo}
+        width={125}
+        height={30}
+        style={{cursor: 'pointer'}}
+        onClick={() =>
+          openUrl('https://github.com/KarimElghamry/sorting-visualizer')
+        }
+      ></img>
 
-    return (
-        <Row style={{
-                    background: '#02E095',
-                    color: 'white',
-                    padding: '10px 0px 10px 0px',
-                    width:'100%'
-                }}
-                align='middle'
-                justify='space-around'
-                >
-                    <img
-                    alt='' 
-                    src={assets.images.githubLogo} 
-                    width={125} 
-                    height={30}
-                    style={{cursor: 'pointer'}}
-                    onClick={() => openUrl('https://github.com/KarimElghamry/sorting-visualizer')}
-                    >
-                        
-                    </img>
-
-                <AlgorithmDropDown
-                    currentAlgorithm={currentAlgorithm}
-                    algorithms={algorithms}
-                    onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
-                />
-                <SpeedSlider onSpeedChange={onSpeedChange} isVisualizing={isVisualizing} />
-                <InputSizeSlider onInputSizeChanged={onInputSizeChanged} isVisualizing={isVisualizing} />
-                <RandomizeButton onClick={onRandomize} />
-                <StartButton onClick={onStart} />
-        </Row>
-            
-    );
-}
+      <AlgorithmDropDown
+        currentAlgorithm={currentAlgorithm}
+        algorithms={algorithms}
+        onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
+      />
+      <SpeedSlider
+        onSpeedChange={onSpeedChange}
+        isVisualizing={isVisualizing}
+      />
+      <InputSizeSlider
+        onInputSizeChanged={onInputSizeChanged}
+        isVisualizing={isVisualizing}
+      />
+      <RandomizeButton onClick={onRandomize} />
+      <StartButton onClick={onStart} />
+    </Row>
+  );
+};
 
 export default HomeHeader;

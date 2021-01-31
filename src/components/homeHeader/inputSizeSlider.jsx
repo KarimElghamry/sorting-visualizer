@@ -1,7 +1,7 @@
 import {Slider} from 'antd';
 import React from 'react';
 
-export function InputSizeSlider({onInputSizeChanged, isVisualizing}) {
+const InputSizeSlider = ({onInputSizeChanged, isVisualizing}) => {
   return (
     <div
       style={{
@@ -25,4 +25,6 @@ export function InputSizeSlider({onInputSizeChanged, isVisualizing}) {
       />
     </div>
   );
-}
+};
+
+export default InputSizeSlider;
