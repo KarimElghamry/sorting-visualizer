@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import selectionSort from '../../algorithms/selection-sort';
 import generateRandomizedArray from '../../helpers/randomizeArray';
-import SortingBar from '../SortingBar_/SortingBar';
-import HomeHeader from '../homeHeader/homeHeader';
+import SortingBar from '../SortingBar/SortingBar';
+import HomeHeader from '../HomeHeader/HomeHeader';
 import '../../index.css';
 import bubbleSort from '../../algorithms/bubble-sort';
 import insertionSort from '../../algorithms/insertion-sort';

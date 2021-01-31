@@ -1,11 +1,11 @@
 import { Row } from 'antd';
 import React from 'react';
 import assets from '../../assets';
-import AlgorithmDropDown from './algorithmDropDown';
-import InputSizeSlider from './InputSizeSlider_';
-import RandomizeButton from './RandomizeButton_';
-import SpeedSlider from './SpeedSlider_';
-import StartButton from './StartButton_';
+import AlgorithmDropDown from './AlgorithmDropDown';
+import InputSizeSlider from './InputSizeSlider';
+import RandomizeButton from './RandomizeButton';
+import SpeedSlider from './SpeedSlider';
+import StartButton from './StartButton';
 
 const HomeHeader = ({
   algorithms,
