@@ -1,11 +1,11 @@
-import {Row} from 'antd';
+import { Row } from 'antd';
 import React from 'react';
 import assets from '../../assets';
 import AlgorithmDropDown from './algorithmDropDown';
-import InputSizeSlider from './inputSizeSlider';
-import RandomizeButton from './randomizeButton';
-import SpeedSlider from './speedSlider';
-import StartButton from './startButton';
+import InputSizeSlider from './InputSizeSlider_';
+import RandomizeButton from './RandomizeButton_';
+import SpeedSlider from './SpeedSlider_';
+import StartButton from './StartButton_';
 
 const HomeHeader = ({
   algorithms,
@@ -37,7 +37,7 @@ const HomeHeader = ({
         src={assets.images.githubLogo}
         width={125}
         height={30}
-        style={{cursor: 'pointer'}}
+        style={{ cursor: 'pointer' }}
         onClick={() =>
           openUrl('https://github.com/KarimElghamry/sorting-visualizer')
         }
