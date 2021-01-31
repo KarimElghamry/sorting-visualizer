@@ -27,4 +27,12 @@
 :wrench: Bogosort<br><br>
 
 ## Examples
+<img src="https://media0.giphy.com/media/ctNkTIrkqDmI6qx1GW/giphy.gif">
+<img src="https://media4.giphy.com/media/PUeeJmCKIXlNl5mH5W/giphy.gif">
+<img src="https://media2.giphy.com/media/YIHHzuBV2Dyx9RCJjR/giphy.gif">
 <img src="https://media4.giphy.com/media/Zb99JNsIGtR8ADMxK5/giphy.gif">
+
+## Contributors
+- [<img src="https://avatars.githubusercontent.com/u/46113985?s=460&u=88ec4e3eb89668988814d82791cb3dc4d2f03681&v=4" width=20px> KarimElghamry](https://github.com/KarimElghamry)
+- [<img src="https://avatars.githubusercontent.com/u/41022464?s=460&u=9e6c55897826e8ff75b8043b3fe4ac93d98851ab&v=4" width=20px> Ali-Amin](https://github.com/Ali-Amin)
+- [<img src="https://avatars.githubusercontent.com/u/49348471?s=460&u=d1fed84fd57c22cca69e063e72f15c22c3da34d2&v=4" width=20px> salmeenessam](https://github.com/salmeenessam)
