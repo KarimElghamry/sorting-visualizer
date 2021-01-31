@@ -5,9 +5,10 @@ import { SpeedSlider } from './speedSlider';
 import { InputSizeSlider } from './inputSizeSlider';
 import { RandomizeButton } from './randomizeButton';
 import { StartButton } from './startButton';
+import assets from '../../assets';
 
 
-function HomeHeader(
+const HomeHeader = (
     {
         algorithms,
         onAlgorithmChange,
@@ -17,29 +18,44 @@ function HomeHeader(
         onRandomize,
         onStart,
         isVisualizing,
-    }) {
+    }) => {
+    const openUrl = (url) => {
+    window.open(url, '_blank')?.focus();
+  };
+
 
     return (
-            <Row style={{
-                background: '#02E095',
-                color: 'white',
-                padding: '10px 10px 10px 10px'
-            }}
-            align='middle'
-            justify='space-around'
-            >
-                    <AlgorithmDropDown
-                        currentAlgorithm={currentAlgorithm}
-                        algorithms={algorithms}
-                        onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
-                    />
+        <Row style={{
+                    background: '#02E095',
+                    color: 'white',
+                    padding: '10px 0px 10px 0px',
+                    width:'100%'
+                }}
+                align='middle'
+                justify='space-around'
+                >
+                    <img
+                    alt='' 
+                    src={assets.images.githubLogo} 
+                    width={125} 
+                    height={30}
+                    style={{cursor: 'pointer'}}
+                    onClick={() => openUrl('https://github.com/KarimElghamry/sorting-visualizer')}
+                    >
+                        
+                    </img>
 
-                    <SpeedSlider onSpeedChange={onSpeedChange} isVisualizing={isVisualizing} />
-                    <InputSizeSlider onInputSizeChanged={onInputSizeChanged} isVisualizing={isVisualizing} />
-                    <RandomizeButton onClick={onRandomize} />
-                    <StartButton onClick={onStart} />
-
-            </Row>
+                <AlgorithmDropDown
+                    currentAlgorithm={currentAlgorithm}
+                    algorithms={algorithms}
+                    onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
+                />
+                <SpeedSlider onSpeedChange={onSpeedChange} isVisualizing={isVisualizing} />
+                <InputSizeSlider onInputSizeChanged={onInputSizeChanged} isVisualizing={isVisualizing} />
+                <RandomizeButton onClick={onRandomize} />
+                <StartButton onClick={onStart} />
+        </Row>
+            
     );
 }
 
