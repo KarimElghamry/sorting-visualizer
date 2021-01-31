@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import selectionSort from '../../algorithms/selection-sort';
 import generateRandomizedArray from '../../helpers/randomizeArray';
-import SortingBar from '../sorting_bar/SortingBar';
-import HomeHeader from '../homeHeader/homeHeader';
+import SortingBar from '../SortingBar/SortingBar';
+import HomeHeader from '../HomeHeader/HomeHeader';
 import '../../index.css';
 import bubbleSort from '../../algorithms/bubble-sort';
 import insertionSort from '../../algorithms/insertion-sort';
@@ -15,7 +15,7 @@ const Home = () => {
   const arraySize = 100;
   const [isVisualizing, setIsVisualizing] = useState(false);
   const [randomizedArray, setRandomizedArray] = useState(
-    generateRandomizedArray({arraySize: arraySize})
+    generateRandomizedArray({ arraySize: arraySize })
   );
   const [colorsArray, setColorsArray] = useState(
     new Array(randomizedArray.length).fill(0)
@@ -43,7 +43,7 @@ const Home = () => {
   };
   const onInputSizeChanged = (val) => {
     if (isVisualizing) return;
-    const nextRandomizedArray = generateRandomizedArray({arraySize: val});
+    const nextRandomizedArray = generateRandomizedArray({ arraySize: val });
     setRandomizedArray(nextRandomizedArray);
     setMaxItem(Math.max(...nextRandomizedArray));
     setColorsArray(new Array(nextRandomizedArray.length).fill(0));
@@ -136,7 +136,7 @@ const Home = () => {
   };
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', height: '100vh'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <HomeHeader
         algorithms={algorithms}
         onAlgorithmChange={setCurrentAlgorithm}
