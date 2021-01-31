@@ -8,7 +8,7 @@
 
 ## Features
 :white_check_mark:  Control Visualization Speed<br><br>
-:white_check_mark:  Change array size (30 -> 300)<br><br>
+:white_check_mark:  Change array size (30 -> 400)<br><br>
 :white_check_mark:  Randomize Input<br><br>
 :wrench: Stop visualization<br><br>
 :wrench: User controller step-by-step visualization<br><br>
