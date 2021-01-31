@@ -24,14 +24,16 @@ const Home = () => {
 
     const onRandomize = () => {
         if(isVisualizing) return;
-        setRandomizedArray(generateRandomizedArray({arraySize: randomizedArray.length}));
-        setMaxItem(Math.max(...randomizedArray));
+        const nextRandomizedArray = generateRandomizedArray({arraySize: randomizedArray.length});
+        setRandomizedArray(nextRandomizedArray);
+        setMaxItem(Math.max(...nextRandomizedArray));
     };
     const onInputSizeChanged = (val) => {
         if(isVisualizing) return;
-        setRandomizedArray(generateRandomizedArray({arraySize: val}));
-        setMaxItem(Math.max(...randomizedArray));
-        setColorsArray(new Array(randomizedArray.length).fill(0));
+        const nextRandomizedArray = generateRandomizedArray({arraySize: val});
+        setRandomizedArray(nextRandomizedArray);
+        setMaxItem(Math.max(...nextRandomizedArray));
+        setColorsArray(new Array(nextRandomizedArray.length).fill(0));
     }
     const onSpeedChange = (val) => {
         if (isVisualizing) return;
