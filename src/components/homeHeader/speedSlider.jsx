@@ -3,8 +3,8 @@ import React from 'react';
 
 export function SpeedSlider({ onSpeedChange, isVisualizing }) {
     return (
-        <div >
-            <div style={{ marginLeft: 40, color: '#0D1929', fontWeight: 500 }}>
+        <div style={{display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{color: '#0D1929', fontWeight: 'bold'}}>
                 Visualization Speed
             </div>
             <Slider

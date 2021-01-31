@@ -4,10 +4,10 @@ import { DownOutlined } from '@ant-design/icons';
 
 
 export function AlgorithmDropDown({ currentAlgorithm, algorithms, onAlgorithmChange }) {
-
+    const width = 170;
 
     const menu = (
-        <Menu style={{ width: 170 }}>
+        <Menu style={{ width: width }}>
             {algorithms.map(function (algorithm, idx) {
                 return <Menu.Item key={idx} onClick={() => onAlgorithmChange(algorithm)}>
                     {algorithm}
@@ -16,16 +16,18 @@ export function AlgorithmDropDown({ currentAlgorithm, algorithms, onAlgorithmCha
         </Menu>
     );
     return (
-        <Dropdown overlay={menu} trigger={['click']} >
+        <Dropdown overlay={menu} trigger={['click']}>
             <div style={{
-                marginTop: 4,
                 height: 40,
-                width: 170,
-                paddingTop: 8,
-                paddingLeft: 24,
+                width: width,
+                padding: 10,
+                fontWeight: 'bold',
                 background: '#0D1929',
-                borderRadius: 2, boxShadow:
-                    '0px 0px 1px 2px #02E095',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                cursor: 'pointer',
+            
             }}>
                 {currentAlgorithm} <DownOutlined />
             </div>

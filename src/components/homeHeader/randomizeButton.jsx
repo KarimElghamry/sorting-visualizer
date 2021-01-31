@@ -7,9 +7,10 @@ export function RandomizeButton({ onClick }) {
         <Button
             type="primary"
             style={{
-                width: 160,
+                width: 130,
                 background: '#0D1929',
                 borderColor: '#0D1929',
+                fontWeight: 'bold',
             }}
             icon={<RedoOutlined />}
             onClick={onClick}>
