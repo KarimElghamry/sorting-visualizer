@@ -1,5 +1,5 @@
 # Sorting Visualizer
-[<img src="https://img.shields.io/website?up_message=Github%20Pages&url=https%3A%2F%2Fkarimelghamry.github.io%2FGraphAV%2F">](https://karimelghamry.github.io/sorting-visualizer/) <img src="https://img.shields.io/github/license/karimelghamry/sorting-visualizer"> <img src="https://img.shields.io/github/issues-raw/karimelghamry/sorting-visualizer">
+[<img src="https://img.shields.io/website?up_message=Github%20Pages&url=https%3A%2F%2Fkarimelghamry.github.io%2FGraphAV%2F">](https://karimelghamry.github.io/sorting-visualizer/)  <img src="https://img.shields.io/github/issues-raw/karimelghamry/sorting-visualizer">
 <img src="https://img.shields.io/github/issues-pr-closed/karimelghamry/sorting-visualizer"> <img src="https://img.shields.io/github/contributors/karimelghamry/sorting-visualizer">
 
 <img src="https://media.giphy.com/media/5Xcgk3DwZQIHvhu8va/source.gif">
