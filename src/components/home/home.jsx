@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import selectionSort from '../../algorithms/selection-sort';
 import generateRandomizedArray from '../../helpers/randomizeArray';
 import SortingBar from '../sorting_bar/SortingBar';
@@ -37,7 +37,7 @@ const Home = () => {
     }
     const onSpeedChange = (val) => {
         if (isVisualizing) return;
-        setVisualizationSpeed(100 - val + 2);
+        setVisualizationSpeed(100 - val + 1);
     }
     
     const onVisualize = async () => {
@@ -139,13 +139,14 @@ const Home = () => {
                 alignItems: 'end', padding: '0px 0px 0px 0px',
             }}>
                 {randomizedArray.map((item, index) => {
-                    const height = item / maxItem * 100;
-                    return <div className='container'
-                        key={index} style={{ height: '100%', display: 'flex', alignItems: 'end' }}>
+                    const height = (item / maxItem) * 100;
+                    const width = (1/randomizedArray.length) * 100;
+                    return <div
+                        key={index} style={{ height: '100%', display: 'flex', alignItems: 'end', width:`${width}%`}}>
                         <SortingBar colorCode={colorsArray[index]} style={{
                             height: `calc(${height}% - 20px)`,
-                            width: `calc((100vw/${randomizedArray.length}) - 2px `, border: `1px solid #0D1929`,
-                            marginTop: 'auto',
+                            width: '100%',
+                            margin: 'auto 10% 0 10%',
                         }}></SortingBar>
                     </div>
                 })}

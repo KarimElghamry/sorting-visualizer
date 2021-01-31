@@ -19,7 +19,6 @@ const SortingBar = (props) =>{
 
     return(
     <div style={{...props.style, backgroundColor: color}}>
-    
     </div>
     );
 }
