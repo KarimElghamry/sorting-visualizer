@@ -6,7 +6,7 @@ export function SpeedSlider({ onSpeedChange, isVisualizing }) {
         <div >
             <div style={{ marginLeft: 40, color: '#0D1929', fontWeight: 500 }}>
                 Visualization Speed
-                    </div>
+            </div>
             <Slider
                 disabled={isVisualizing}
                 defaultValue={30}

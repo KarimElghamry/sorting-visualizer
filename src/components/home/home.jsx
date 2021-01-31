@@ -19,7 +19,7 @@ const Home = () => {
     const [visualizationSpeed, setVisualizationSpeed] = useState(30);
     const [maxItem, setMaxItem] = useState(Math.max(...randomizedArray));
     const [currentAlgorithm, setCurrentAlgorithm] = useState('Bubble Sort');
-    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Quick Sort','Quick Sort (L)', 'Quick Sort (LR)','Merge Sort', 'Inplace Merge Sort'];
+    const algorithms = ['Bubble Sort', 'Insertion Sort', 'Selection Sort','Quick Sort (L)', 'Quick Sort (LR)','Merge Sort', 'Inplace Merge Sort'];
 
 
     const onRandomize = () => {

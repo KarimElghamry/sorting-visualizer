@@ -1,4 +1,4 @@
-import { PageHeader } from 'antd';
+import { Row } from 'antd';
 import React from 'react';
 import { AlgorithmDropDown } from './algorithmDropDown';
 import { SpeedSlider } from './speedSlider';
@@ -20,34 +20,27 @@ function HomeHeader(
     }) {
 
     return (
-        <PageHeader
-            style={{
+            <Row style={{
                 background: '#02E095',
-                border: '1px solid rgb(0, 0, 0)',
-                borderColor: 'black',
                 color: 'white',
-                height: 100,
-                position: 'relative',
+                minHeight: '80px',
+                padding: '10px 10px 10px 10px'
+            }}
+            align='middle'
+            justify='space-around'
+            >
+                    <AlgorithmDropDown
+                        currentAlgorithm={currentAlgorithm}
+                        algorithms={algorithms}
+                        onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
+                    />
 
-            }}>
-            <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-evenly'
+                    <SpeedSlider onSpeedChange={onSpeedChange} isVisualizing={isVisualizing} />
+                    <InputSizeSlider onInputSizeChanged={onInputSizeChanged} isVisualizing={isVisualizing} />
+                    <RandomizeButton onClick={onRandomize} />
+                    <StartButton onClick={onStart} />
 
-            }}>
-                <AlgorithmDropDown
-                    currentAlgorithm={currentAlgorithm}
-                    algorithms={algorithms}
-                    onAlgorithmChange={(algo) => onAlgorithmChange(algo)}
-                />
-                <SpeedSlider onSpeedChange={onSpeedChange} isVisualizing={isVisualizing} />
-                <InputSizeSlider onInputSizeChanged={onInputSizeChanged} isVisualizing={isVisualizing} />
-                <RandomizeButton onClick={onRandomize} />
-                <StartButton onClick={onStart} />
-            </div>
-
-        </PageHeader>
+            </Row>
     );
 }
 

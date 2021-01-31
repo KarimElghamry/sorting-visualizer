@@ -7,7 +7,7 @@ export function AlgorithmDropDown({ currentAlgorithm, algorithms, onAlgorithmCha
 
 
     const menu = (
-        <Menu style={{ width: 200 }}>
+        <Menu style={{ width: 170 }}>
             {algorithms.map(function (algorithm, idx) {
                 return <Menu.Item key={idx} onClick={() => onAlgorithmChange(algorithm)}>
                     {algorithm}
@@ -20,7 +20,7 @@ export function AlgorithmDropDown({ currentAlgorithm, algorithms, onAlgorithmCha
             <div style={{
                 marginTop: 4,
                 height: 40,
-                width: 150,
+                width: 170,
                 paddingTop: 8,
                 paddingLeft: 24,
                 background: '#0D1929',
