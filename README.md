@@ -2,7 +2,7 @@
 [<img src="https://img.shields.io/website?up_message=Github%20Pages&url=https%3A%2F%2Fkarimelghamry.github.io%2FGraphAV%2F">](https://karimelghamry.github.io/sorting-visualizer/) <img src="https://img.shields.io/github/license/karimelghamry/sorting-visualizer"> <img src="https://img.shields.io/github/issues-raw/karimelghamry/sorting-visualizer">
 <img src="https://img.shields.io/github/issues-pr-closed/karimelghamry/sorting-visualizer"> <img src="https://img.shields.io/github/contributors/karimelghamry/sorting-visualizer">
 
-<img src="https://media0.giphy.com/media/5Xcgk3DwZQIHvhu8va/giphy.gif">
+<img src="https://media.giphy.com/media/5Xcgk3DwZQIHvhu8va/source.gif">
 
 - A tool to visualize sorting algorithms built using **ReactJS** ([link](https://karimelghamry.github.io/sorting-visualizer/))
 - Still a work in progress
@@ -28,10 +28,10 @@
 :wrench: Bogosort<br><br>
 
 ## Examples
-<img src="https://media0.giphy.com/media/ctNkTIrkqDmI6qx1GW/giphy.gif">
-<img src="https://media4.giphy.com/media/PUeeJmCKIXlNl5mH5W/giphy.gif">
-<img src="https://media2.giphy.com/media/YIHHzuBV2Dyx9RCJjR/giphy.gif">
-<img src="https://media4.giphy.com/media/Zb99JNsIGtR8ADMxK5/giphy.gif">
+<img src="https://media.giphy.com/media/ctNkTIrkqDmI6qx1GW/source.gif">
+<img src="https://media.giphy.com/media/PUeeJmCKIXlNl5mH5W/source.gif">
+<img src="https://media.giphy.com/media/YIHHzuBV2Dyx9RCJjR/source.gif">
+<img src="https://media.giphy.com/media/Zb99JNsIGtR8ADMxK5/source.gif">
 
 ## Contributors
 - [<img src="https://avatars.githubusercontent.com/u/46113985?s=460&u=88ec4e3eb89668988814d82791cb3dc4d2f03681&v=4" width=20px> KarimElghamry](https://github.com/KarimElghamry)
