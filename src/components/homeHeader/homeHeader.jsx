@@ -23,7 +23,6 @@ function HomeHeader(
             <Row style={{
                 background: '#02E095',
                 color: 'white',
-                minHeight: '80px',
                 padding: '10px 10px 10px 10px'
             }}
             align='middle'

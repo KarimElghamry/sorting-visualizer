@@ -120,7 +120,7 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div style={{display:'flex', flexDirection:'column', height:'100vh'}}>
             <HomeHeader
                 algorithms={algorithms}
                 onAlgorithmChange={setCurrentAlgorithm}
@@ -132,7 +132,7 @@ const Home = () => {
                 isVisualizing={isVisualizing}
             />
             <div style={{
-                backgroundColor: '#0D1929', display: 'flex', height: 'calc(100vh - 100px)',
+                backgroundColor: '#0D1929', display: 'flex', height: '100%',
                 width: '100vw', flexDirection: 'row',
                 alignItems: 'end', padding: '0px 0px 0px 0px',
             }}>
