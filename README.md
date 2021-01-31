@@ -11,8 +11,10 @@
 :white_check_mark:  Control Visualization Speed<br><br>
 :white_check_mark:  Change array size (30 -> 400)<br><br>
 :white_check_mark:  Randomize Input<br><br>
+:white_check_mark:  Choose various algorithms<br><br>
 :wrench: Stop visualization<br><br>
 :wrench: User controller step-by-step visualization<br><br>
+:wrench: Visualization with sound<br><br>
 
 ## Algorithms to Visualize
 :white_check_mark:  Bubble Sort<br><br>
