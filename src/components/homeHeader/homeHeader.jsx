@@ -1,10 +1,10 @@
 import { PageHeader } from 'antd';
 import React from 'react';
-import { AlgorithmDropDown } from './algorithmDropDown';
-import { SpeedSlider } from './speedSlider';
-import { InputSizeSlider } from './inputSizeSlider';
-import { RandomizeButton } from './randomizeButton';
-import { StartButton } from './startButton';
+import { AlgorithmDropDown } from './AlgorithmDropDown';
+import { SpeedSlider } from './SpeedSlider';
+import { InputSizeSlider } from './InputSizeSlider';
+import { RandomizeButton } from './RandomizeButton';
+import { StartButton } from './StartButton';
 
 
 function HomeHeader(
