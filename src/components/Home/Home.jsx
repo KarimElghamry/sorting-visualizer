@@ -85,7 +85,7 @@ const Home = () => {
         });
         break;
 
-      case 'Quick Sort (L)':
+      case 'QuickSort (L)':
         await quickSortLWrapper({
           array: randomizedArray,
           leftIndex: 0,
@@ -95,7 +95,7 @@ const Home = () => {
           setColorsArray: setColorsArray,
         });
         break;
-      case 'Quick Sort (LR)':
+      case 'QuickSort (LR)':
         await quickSortLRWrapper({
           array: randomizedArray,
           leftIndex: 0,
